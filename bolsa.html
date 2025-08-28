@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VALMA | Bolsa de trabajo</title>
+    <meta name="description" content="Vacantes en VALMA para ingeniería biomédica, compras, logística y comercial.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --teal-900: #0c4a4a;
+            --teal-700: #0f6b6a;
+            --teal-500: #0aa7a5;
+            --lime-400: #6bd36b;
+            --slate-100: #f4f7fb;
+            --radius-2xl: 22px;
+            --shadow-lg: 0 22px 60px rgba(15, 107, 106, .18);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: "Nunito", system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(180deg, #ffffff, #eef7f7)
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, .7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(15, 107, 106, .08);
+            z-index: 10
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: auto;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .brand img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain
+        }
+
+        .brand .t {
+            font-weight: 900;
+            color: var(--teal-700)
+        }
+
+        .back {
+            margin-left: auto;
+            border: 2px solid rgba(15, 107, 106, .25);
+            padding: 8px 14px;
+            border-radius: 14px;
+            color: var(--teal-700);
+            font-weight: 800
+        }
+
+        .hero {
+            padding: 70px 18px;
+            text-align: center
+        }
+
+        .title {
+            font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+            font-weight: 900;
+            color: var(--teal-900);
+            letter-spacing: .3px
+        }
+
+        .subtitle {
+            color: #3a5663;
+            margin-top: 6px
+        }
+
+        .chips {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 16px
+        }
+
+        .chip {
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(10, 167, 165, .25);
+            background: rgba(10, 167, 165, .06);
+            font-weight: 800;
+            color: var(--teal-700);
+            cursor: pointer
+        }
+
+        .chip.active {
+            background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
+            border-color: transparent;
+            color: #fff
+        }
+
+        section {
+            padding: 18px
+        }
+
+        .grid {
+            display: grid;
+            gap: 18px;
+            max-width: 1100px;
+            margin: 0 auto
+        }
+
+        @media(min-width:900px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        .job {
+            background: #fff;
+            border: 1px solid rgba(15, 107, 106, .12);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            padding: 18px;
+            transition: transform .3s, box-shadow .3s
+        }
+
+        .job:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 28px 80px rgba(15, 107, 106, .22)
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: .8rem;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(10, 167, 165, .08);
+            border: 1px solid rgba(10, 167, 165, .18);
+            color: var(--teal-700);
+            font-weight: 800
+        }
+
+        h3 {
+            margin: 10px 0 6px;
+            color: var(--teal-900)
+        }
+
+        .muted {
+            color: #5b7683
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-weight: 800;
+            display: inline-block
+        }
+
+        .ghost {
+            border: 2px solid rgba(15, 107, 106, .25);
+            padding: 8px 12px;
+            border-radius: 14px;
+            color: var(--teal-700);
+            font-weight: 800
+        }
+
+        /* acordeón */
+        details {
+            border-top: 1px dashed rgba(15, 107, 106, .18);
+            margin-top: 10px;
+            padding-top: 10px
+        }
+
+        details[open] summary {
+            color: var(--teal-700)
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 900;
+            list-style: none
+        }
+
+        summary::-webkit-details-marker {
+            display: none
+        }
+
+        /* reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity .6s ease, transform .6s ease
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: none
+        }
+
+        footer {
+            padding: 28px 18px;
+            border-top: 1px solid rgba(15, 107, 106, .12);
+            background: #e7f6f5;
+            color: #2b4a57;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <a class="brand" href="index.html"><img src="LOGO VALMA.jpg" alt="VALMA"><span class="t">VALMA</span></a>
+            <a class="back" href="index.html">← Regresar al sitio</a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="title">Bolsa de trabajo</div>
+        <div class="subtitle">Talento con mentalidad de servicio y rigor técnico. Sector público y privado.</div>
+        <div class="chips">
+            <button class="chip active" data-filter="all">Todas</button>
+            <button class="chip" data-filter="ingenieria">Ingeniería</button>
+            <button class="chip" data-filter="comercial">Comercial</button>
+            <button class="chip" data-filter="operaciones">Operaciones</button>
+        </div>
+    </div>
+
+    <section>
+        <div class="grid" id="jobs">
+            <!-- Ingeniería -->
+            <article class="job reveal" data-cat="ingenieria">
+                <span class="tag">Ingeniería</span>
+                <h3>Ingeniero Biomédico Jr.</h3>
+                <p class="muted">Soporte a instalación, validaciones, bitácoras digitales. Disponibilidad para viajar.
+                </p>
+                <details>
+                    <summary>Ver requisitos</summary>
+                    <ul class="muted">
+                        <li>Técnicas básicas de mantenimiento y normatividad.</li>
+                        <li>Excel/Sheets, manejo de tickets, checklists.</li>
+                        <li>Licencia de conducir vigente.</li>
+                    </ul>
+                </details>
+                <div class="actions">
+                    <a class="btn" href="#" onclick="alert('Envía tu CV a talento@valma.mx (ejemplo).')">Postular</a>
+                    <a class="ghost" href="#">Descargar perfil</a>
+                </div>
+            </article>
+
+            <article class="job reveal" data-cat="ingenieria">
+                <span class="tag">Ingeniería</span>
+                <h3>Especialista de Puesta a Punto</h3>
+                <p class="muted">Instalación y pruebas de equipos en quirófano y laboratorio. Comunicación con usuarios.
+                </p>
+                <details>
+                    <summary>Ver requisitos</summary>
+                    <ul class="muted">
+                        <li>Protocolos IQ/OQ/PQ.</li>
+                        <li>Capacitación a usuarios finales.</li>
+                        <li>Disponibilidad 24/7 en contratos críticos.</li>
+                    </ul>
+                </details>
+                <div class="actions">
+                    <a class="btn" href="#" onclick="alert('Envía tu CV a talento@valma.mx (ejemplo).')">Postular</a>
+                    <a class="ghost" href="#">Descargar perfil</a>
+                </div>
+            </article>
+
+            <!-- Comercial -->
+            <article class="job reveal" data-cat="comercial">
+                <span class="tag">Comercial</span>
+                <h3>Ejecutivo de Cuenta Clínica</h3>
+                <p class="muted">Gestión de cuentas clave, propuestas técnicas y seguimiento postventa.</p>
+                <details>
+                    <summary>Ver requisitos</summary>
+                    <ul class="muted">
+                        <li>Experiencia con sector hospitalario.</li>
+                        <li>Manejo de CRM y KPIs.</li>
+                        <li>Conocimiento de LAASSP deseable.</li>
+                    </ul>
+                </details>
+                <div class="actions">
+                    <a class="btn" href="#" onclick="alert('Envía tu CV a talento@valma.mx (ejemplo).')">Postular</a>
+                    <a class="ghost" href="#">Descargar perfil</a>
+                </div>
+            </article>
+
+            <!-- Operaciones -->
+            <article class="job reveal" data-cat="operaciones">
+                <span class="tag">Operaciones</span>
+                <h3>Compras y Logística</h3>
+                <p class="muted">Gestión de proveedores, OC, recepción y control de inventario. Soporte a proyectos.</p>
+                <details>
+                    <summary>Ver requisitos</summary>
+                    <ul class="muted">
+                        <li>Negociación y control de tiempos.</li>
+                        <li>ERP básico y control de almacén.</li>
+                        <li>Seguimiento a garantías y refacciones.</li>
+                    </ul>
+                </details>
+                <div class="actions">
+                    <a class="btn" href="#" onclick="alert('Envía tu CV a talento@valma.mx (ejemplo).')">Postular</a>
+                    <a class="ghost" href="#">Descargar perfil</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        © <span id="y"></span> VALMA · Ingenieria en Equipos Médicos · Candidaturas abiertas todo el año
+    </footer>
+
+    <script>
+        // año
+        document.getElementById('y').textContent = new Date().getFullYear();
+
+        // reveal
+        const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target) } }), { threshold: .15 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // filtros
+        const chips = [...document.querySelectorAll('.chip')], jobs = [...document.querySelectorAll('.job')];
+        chips.forEach(c => c.addEventListener('click', () => {
+            chips.forEach(x => x.classList.remove('active')); c.classList.add('active');
+            const f = c.dataset.filter;
+            jobs.forEach(j => { j.style.display = (f === 'all' || j.dataset.cat === f) ? 'block' : 'none'; });
+            // mini animación al filtrar
+            jobs.forEach(j => { if (j.style.display !== 'none') { j.classList.remove('show'); setTimeout(() => j.classList.add('show'), 10); } });
+        }));
+    </script>
+</body>
+
+</html>

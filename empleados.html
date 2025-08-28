@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VALMA | Acceso empleados</title>
+    <meta name="description" content="Portal de acceso para colaboradores de VALMA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --teal-900: #0c4a4a;
+            --teal-700: #0f6b6a;
+            --teal-500: #0aa7a5;
+            --lime-400: #6bd36b;
+            --slate-100: #f4f7fb;
+            --dark: #0b1220;
+            --radius-2xl: 22px;
+            --shadow-lg: 0 28px 80px rgba(15, 107, 106, .22);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            height: 100%
+        }
+
+        body {
+            font-family: "Nunito", system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            background: radial-gradient(1000px 500px at 10% -10%, rgba(107, 211, 107, .18), transparent), radial-gradient(900px 500px at 110% -10%, rgba(10, 167, 165, .18), transparent), linear-gradient(180deg, #fff, #eef7f7);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, .6);
+            border-bottom: 1px solid rgba(15, 107, 106, .08);
+            z-index: 10
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: auto;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .brand img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .08))
+        }
+
+        .brand .t {
+            font-weight: 900;
+            color: var(--teal-700)
+        }
+
+        .back {
+            margin-left: auto;
+            border: 2px solid rgba(15, 107, 106, .25);
+            padding: 8px 14px;
+            border-radius: 14px;
+            color: var(--teal-700);
+            font-weight: 800
+        }
+
+        main {
+            min-height: calc(100vh - 60px);
+            display: grid;
+            place-items: center;
+            padding: 28px
+        }
+
+        .card {
+            position: relative;
+            background: #fff;
+            border: 1px solid rgba(15, 107, 106, .12);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            padding: 28px;
+            max-width: 420px;
+            width: 95%
+        }
+
+        h1 {
+            margin: 0 0 6px;
+            color: var(--teal-900);
+            font-size: 1.6rem
+        }
+
+        p.muted {
+            margin: 0 0 16px;
+            color: #5b7683
+        }
+
+        label {
+            font-weight: 800;
+            color: #2b4a57
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d7e3ea;
+            border-radius: 14px
+        }
+
+        .cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 14px;
+            font-weight: 800;
+            border: none;
+            cursor: pointer
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .helper {
+            font-size: .85rem;
+            color: #628290
+        }
+
+        /* blobs */
+        .blob {
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(4px);
+            opacity: .18;
+            z-index: -1
+        }
+
+        .b1 {
+            width: 220px;
+            height: 220px;
+            left: -60px;
+            top: -60px;
+            background: conic-gradient(from 40deg, var(--teal-500), var(--lime-400));
+            animation: float 10s ease-in-out infinite
+        }
+
+        .b2 {
+            width: 180px;
+            height: 180px;
+            right: -60px;
+            bottom: -60px;
+            background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
+            animation: float 12s ease-in-out infinite reverse
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-12px)
+            }
+        }
+
+        /* toast */
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 24px;
+            transform: translateX(-50%) translateY(20px);
+            background: #fff;
+            border: 1px solid rgba(255, 0, 0, .18);
+            color: #9b1c1c;
+            border-radius: 14px;
+            padding: 12px 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+            opacity: 0;
+            transition: .35s
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0)
+        }
+
+        /* shake */
+        .shake {
+            animation: shake .32s ease-in-out 0s 1
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0)
+            }
+
+            25% {
+                transform: translateX(-8px)
+            }
+
+            50% {
+                transform: translateX(8px)
+            }
+
+            75% {
+                transform: translateX(-6px)
+            }
+
+            100% {
+                transform: translateX(0)
+            }
+        }
+
+        /* spinner */
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(15, 107, 106, .2);
+            border-top-color: var(--teal-500);
+            border-radius: 50%;
+            display: inline-block;
+            animation: spin .8s linear infinite;
+            vertical-align: middle;
+            margin-left: 8px
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <a class="brand" href="index.html"><img src="LOGO VALMA.jpg" alt="VALMA"><span class="t">VALMA</span></a>
+            <a class="back" href="index.html">← Regresar al sitio</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="card" id="card">
+            <span class="blob b1"></span><span class="blob b2"></span>
+            <h1>Acceso para empleados</h1>
+            <p class="muted">Ingresa tus credenciales corporativas para continuar.</p>
+            <form id="login">
+                <label>Usuario<br><input type="text" placeholder="usuario@valma.mx" required></label><br>
+                <label>Contraseña<br><input type="password" placeholder="••••••••" required></label><br>
+                <div class="row">
+                    <span class="helper">¿Problemas? contacta a TI.</span>
+                    <button class="cta" type="submit" id="btn">Iniciar sesión</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div class="toast" id="toast">Acceso incorrecto. Verifica tus credenciales con TI.</div>
+
+    <script>
+        const f = document.getElementById('login'), btn = document.getElementById('btn'), card = document.getElementById('card'), toast = document.getElementById('toast');
+        f.addEventListener('submit', e => {
+            e.preventDefault();
+            const old = btn.textContent; btn.textContent = 'Validando'; const sp = document.createElement('span'); sp.className = 'spinner'; btn.appendChild(sp);
+            setTimeout(() => {
+                btn.textContent = old;
+                card.classList.remove('shake'); void card.offsetWidth; card.classList.add('shake'); // retrigger
+                toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2500);
+            }, 900);
+        });
+    </script>
+</body>
+
+</html>

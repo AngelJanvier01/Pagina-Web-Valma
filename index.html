@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VALMA | Ingeniería en Equipos Médicos — Nosotros</title>
+    <meta name="description"
+        content="Ingeniería clínica, suministro médico y proyectos hospitalarios para sector público y privado en toda la República Mexicana.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --teal-900: #0c4a4a;
+            --teal-700: #0f6b6a;
+            --teal-500: #0aa7a5;
+            --lime-400: #6bd36b;
+            --slate-100: #f4f7fb;
+            --radius-2xl: 22px;
+            --shadow-lg: 0 20px 40px rgba(15, 107, 106, .18);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: "Nunito", sans-serif;
+            background: var(--slate-100);
+            color: #10222f
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, .7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(15, 107, 106, .08);
+            z-index: 10
+        }
+
+        .wrap {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .brand img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain
+        }
+
+        .brand .title {
+            font-weight: 800;
+            color: var(--teal-700)
+        }
+
+        .menu {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .menu a {
+            padding: 8px 10px;
+            font-size: .95rem;
+            border-radius: 12px;
+            font-weight: 800;
+            color: #274655
+        }
+
+        .menu a:hover {
+            background: rgba(10, 167, 165, .08)
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 14px;
+            font-weight: 800
+        }
+
+        .ghost {
+            border: 2px solid rgba(15, 107, 106, .25);
+            padding: 9px 14px;
+            border-radius: 14px;
+            font-weight: 800;
+            color: var(--teal-700)
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(180deg, #fff, #eef7f7);
+            padding: 80px 20px
+        }
+
+        .hero .wrap {
+            display: grid;
+            gap: 30px;
+            align-items: center
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            margin: 0;
+            color: var(--teal-900)
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #375361
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        /* Sections */
+        section {
+            padding: 70px 0
+        }
+
+        h2.section-title {
+            font-size: 2rem;
+            color: var(--teal-900);
+            margin: 0 0 10px
+        }
+
+        p.section-sub {
+            color: #3a5663;
+            margin: 0 0 25px
+        }
+
+        .grid-2 {
+            display: grid;
+            gap: 20px
+        }
+
+        .grid-3 {
+            display: grid;
+            gap: 20px
+        }
+
+        @media(min-width:900px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid rgba(15, 107, 106, .12);
+            border-radius: var(--radius-2xl);
+            padding: 20px;
+            box-shadow: var(--shadow-lg)
+        }
+
+        .chip {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(10, 167, 165, .08);
+            font-weight: 800;
+            color: var(--teal-700)
+        }
+
+        /* Map */
+        .mapCard {
+            background: #fff;
+            border: 1px solid rgba(15, 107, 106, .12);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            padding: 16px
+        }
+
+        .mapWrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #f3fbfb
+        }
+
+        .mapWrap img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none
+        }
+
+        .pin {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--teal-500);
+            box-shadow: 0 0 0 6px rgba(10, 167, 165, .15)
+        }
+
+        .pin::after {
+            content: \"\";
+            position: absolute;
+            inset: -8px;
+            border: 2px solid var(--teal-500);
+            border-radius: 50%;
+            animation: pulse 1.8s infinite
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(.6);
+                opacity: .8
+            }
+
+            70% {
+                transform: scale(1.4);
+                opacity: 0
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        .pin label {
+            position: absolute;
+            top: 14px;
+            left: 10px;
+            background: rgba(12, 74, 74, .9);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: .8rem;
+            white-space: nowrap
+        }
+
+        .legend {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            color: #375361
+        }
+
+        .legend span {
+            background: rgba(10, 167, 165, .08);
+            border: 1px solid rgba(10, 167, 165, .18);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 800;
+            color: var(--teal-700)
+        }
+
+        /* Bloqueo móvil */
+        .blocker {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 18, 32, .92);
+            color: #fff;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 24px;
+            text-align: center
+        }
+
+        .blocker .card {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 18px;
+            padding: 20px;
+            backdrop-filter: blur(8px)
+        }
+
+        @media(max-width:1024px) {
+            .blocker {
+                display: flex
+            }
+
+            body {
+                overflow: hidden
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="wrap nav">
+            <a class="brand" href="#top"><img src="LOGO VALMA.jpg" alt="VALMA"><span class="title">VALMA</span></a>
+            <nav class="menu">
+                <a href="#nosotros">Nosotros</a>
+                <a href="#valores">Valores</a>
+                <a href="#servicios">Expertise</a>
+                <a href="#cobertura">Cobertura</a>
+                <a href="#fiscal">Datos fiscales</a>
+                <a href="bolsa.html">Bolsa de trabajo</a>
+                <a href="empleados.html" class="ghost">Acceso empleados</a>
+                <a href="#contacto" class="cta">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="wrap">
+            <div>
+                <h1>Ingeniería clínica y suministro médico</h1>
+                <p>Soluciones integrales para sector público y privado. Instalación, mantenimiento y proyectos llave en
+                    mano.</p>
+                <div class="buttons">
+                    <a href="#nosotros" class="cta">Conócenos</a>
+                    <a href="#servicios" class="ghost">Qué hacemos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <div class="wrap">
+            <h2 class="section-title">Quiénes somos</h2>
+            <p class="section-sub">VALMA es una empresa mexicana de <strong>ingeniería en equipos médicos</strong> y
+                proyectos hospitalarios.</p>
+            <div class="grid-3">
+                <div class="card"><span class="chip">Misión</span>
+                    <p>Brindar soluciones seguras y eficientes en equipos médicos.</p>
+                </div>
+                <div class="card"><span class="chip">Visión</span>
+                    <p>Ser el aliado técnico preferido de hospitales y clínicas en Latinoamérica.</p>
+                </div>
+                <div class="card"><span class="chip">Valores</span>
+                    <p>Seguridad del paciente, transparencia, innovación y soporte cercano.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <div class="wrap">
+            <h2 class="section-title">Expertise</h2>
+            <p class="section-sub">Servimos a <strong>toda la República Mexicana</strong>.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Ingeniería y proyectos</h3>
+                    <p class="muted">Instalación, mantenimiento, proyectos llave en mano.</p>
+                </div>
+                <div class="card">
+                    <h3>Comercialización</h3>
+                    <p class="muted">Mayorista de equipos médicos, consumibles y refacciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cobertura" style="background:#fff">
+        <div class="wrap">
+            <h2 class="section-title">Cobertura nacional</h2>
+            <div class="mapCard">
+                <div class="mapWrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mexico_blank_map.svg/1280px-Mexico_blank_map.svg.png"
+                        alt="Mapa de México">
+                    <div class="pin" style="left:49%;top:21%"><label>Monterrey</label></div>
+                    <div class="pin" style="left:43%;top:34%"><label>Torreón</label></div>
+                    <div class="pin" style="left:50%;top:35%"><label>Monclova</label></div>
+                    <div class="pin" style="left:45%;top:40%"><label>Zacatecas</label></div>
+                    <div class="pin" style="left:46%;top:44%"><label>Aguascalientes</label></div>
+                    <div class="pin" style="left:53%;top:41%"><label>Querétaro</label></div>
+                    <div class="pin" style="left:38%;top:63%"><label>Colima</label></div>
+                    <div class="pin" style="left:76%;top:68%"><label>Yucatán</label></div>
+                    <div class="pin" style="left:82%;top:72%"><label>Cancún</label></div>
+                </div>
+                <div class="legend"><span>Sector público</span><span>Sector privado</span><span>24/7 en contratos
+                        críticos</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fiscal + Contacto igual que antes... -->
+
+    <div class="blocker">
+        <div class="card">
+            <h2>Vista no disponible en móviles</h2>
+            <p>Accede desde computadora.</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.reveal').forEach(el => {
+            const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target) } }), { threshold: .15 });
+            io.observe(el);
+        });
+    </script>
+</body>
+
+</html>
