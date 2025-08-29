@@ -146,6 +146,16 @@
             justify-content: space-between
         }
 
+        .row{
+            display:flex;
+            gap:10px;
+            align-items:center;
+            justify-content:space-between;
+            margin-top:22px;
+        }
+
+        
+
         .helper {
             font-size: .85rem;
             color: #628290
@@ -274,16 +284,16 @@
             <p class="muted">Ingresa tus credenciales corporativas para continuar.</p>
             <form id="login">
                 <label>Usuario<br><input type="text" placeholder="usuario@valma.mx" required></label><br>
-                <label>Contraseña<br><input type="password" placeholder="••••••••" required></label><br>
+                <label>Contraseña<br><input type="password" placeholder="••••••••••••••••••••••••••" required></label><br>
                 <div class="row">
-                    <span class="helper">¿Problemas? contacta a TI.</span>
+                    <span class="helper">¿Problemas? contacta a iT.</span>
                     <button class="cta" type="submit" id="btn">Iniciar sesión</button>
                 </div>
             </form>
         </div>
     </main>
 
-    <div class="toast" id="toast">Acceso incorrecto. Verifica tus credenciales con TI.</div>
+    <div class="toast" id="toast">Acceso incorrecto. Verifica tus credenciales con iT.</div>
 
     <script>
         const f = document.getElementById('login'), btn = document.getElementById('btn'), card = document.getElementById('card'), toast = document.getElementById('toast');
