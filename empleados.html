@@ -5,11 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>VALMA | Acceso empleados</title>
+    <link rel="canonical" href="https://ingenieriavalma.com/empleados.html">
     <meta name="description" content="Portal de acceso para colaboradores de VALMA.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
     <style>
         :root {
             --teal-900: #0c4a4a;
@@ -19,7 +18,7 @@
             --slate-100: #f4f7fb;
             --dark: #0b1220;
             --radius-2xl: 22px;
-            --shadow-lg: 0 28px 80px rgba(15, 107, 106, .22);
+            --shadow-lg: 0 28px 80px rgba(15, 23, 42, .16);
         }
 
         * {
@@ -33,7 +32,7 @@
         }
 
         body {
-            font-family: "Nunito", system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-family: "DM Sans", system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             background: radial-gradient(1000px 500px at 10% -10%, rgba(107, 211, 107, .18), transparent), radial-gradient(900px 500px at 110% -10%, rgba(10, 167, 165, .18), transparent), linear-gradient(180deg, #fff, #eef7f7);
         }
 
@@ -158,7 +157,7 @@
 
         .helper {
             font-size: .85rem;
-            color: #628290
+            color: #405f66
         }
 
         /* blobs */
@@ -267,9 +266,10 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="valma.css">
 </head>
 
-<body>
+<body class="page-staff">
     <header>
         <div class="wrap">
             <a class="brand" href="index.html"><img src="logovalma.jpg" alt="VALMA"><span class="t">VALMA</span></a>
@@ -279,34 +279,12 @@
 
     <main>
         <div class="card" id="card">
-            <span class="blob b1"></span><span class="blob b2"></span>
             <h1>Acceso para empleados</h1>
-            <p class="muted">Ingresa tus credenciales corporativas para continuar.</p>
-            <form id="login">
-                <label>Usuario<br><input type="text" placeholder="usuario@valma.mx" required></label><br>
-                <label>Contraseña<br><input type="password" placeholder="••••••••••••••••••••••••••" required></label><br>
-                <div class="row">
-                    <span class="helper">¿Problemas? contacta a iT.</span>
-                    <button class="cta" type="submit" id="btn">Iniciar sesión</button>
-                </div>
-            </form>
+            <p class="muted">¿Necesitas ayuda para acceder? Escríbenos y te ayudamos.</p>
+            <a class="cta" href="mailto:direccion@ingenieriavalma.com?subject=Consulta%20sobre%20acceso%20de%20empleados">Enviar correo</a>
+            <p class="helper">direccion@ingenieriavalma.com</p>
         </div>
     </main>
-
-    <div class="toast" id="toast">Acceso incorrecto. Verifica tus credenciales con iT.</div>
-
-    <script>
-        const f = document.getElementById('login'), btn = document.getElementById('btn'), card = document.getElementById('card'), toast = document.getElementById('toast');
-        f.addEventListener('submit', e => {
-            e.preventDefault();
-            const old = btn.textContent; btn.textContent = 'Validando'; const sp = document.createElement('span'); sp.className = 'spinner'; btn.appendChild(sp);
-            setTimeout(() => {
-                btn.textContent = old;
-                card.classList.remove('shake'); void card.offsetWidth; card.classList.add('shake'); // retrigger
-                toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2500);
-            }, 900);
-        });
-    </script>
 </body>
 
 </html>

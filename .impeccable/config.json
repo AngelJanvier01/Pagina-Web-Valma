@@ -1,0 +1,36 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-09T19:13:24.332Z",
+        "reason": "Codex: estilos activos de tarjetas y botones sin sombras en la pagina, verificados en navegador; coincidencia del CSS antiguo sobrescrito."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-09T19:14:51.404Z",
+        "reason": "Codex: separadores horizontales y tarjetas transparentes revisados en escritorio y movil; texto separado 20-32px del borde visible."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "empleados.html"
+        ],
+        "createdAt": "2026-11-09T20:25:13.938Z",
+        "reason": "Agent verified: card has 28px padding at mobile width; two decorative child spans are display:none and have no rendered bounds"
+      }
+    ]
+  }
+}

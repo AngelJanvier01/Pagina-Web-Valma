@@ -4,13 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>VALMA | Ingeniería en Equipos Médicos — Sitio Corporativo</title>
+    <title>VALMA | Distribuidor de insumos y equipo médico</title>
+    <link rel="canonical" href="https://ingenieriavalma.com/">
     <meta name="description"
-        content="Ingeniería clínica, suministro médico y proyectos hospitalarios con cumplimiento para sector público y privado en toda la República Mexicana.">
+        content="Distribuidor de insumos, equipo e instrumental médico para hospitales e instituciones de salud en todo México.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
     <style>
         :root {
             --teal-900: #0c4a4a;
@@ -22,8 +21,8 @@
             --slate-100: #f4f7fb;
             --white: #ffffff;
             --radius-2xl: 22px;
-            --shadow-lg: 0 22px 60px rgba(15, 107, 106, .18);
-            --shadow-sm: 0 10px 20px rgba(12, 74, 74, .12);
+            --shadow-lg: 0 22px 60px rgba(15, 23, 42, .12);
+            --shadow-sm: 0 10px 20px rgba(15, 23, 42, .10);
             --anchor-offset: 110px;
             /* altura del header para corregir anclas */
         }
@@ -36,7 +35,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: "Nunito", system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-family: "DM Sans", system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             background: var(--slate-100);
             color: #10222f
         }
@@ -364,7 +363,7 @@
             height: 12px;
             border-radius: 999px;
             background: var(--teal-500);
-            box-shadow: 0 0 0 6px rgba(10, 167, 165, .15)
+            box-shadow: none
         }
 
         .pin::after {
@@ -491,15 +490,16 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="valma.css">
 </head>
 
-<body>
+<body class="page-home">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <!-- Aviso superior (legal/servicio) -->
     <div class="topnote">
         <div class="wrap" style="display:flex;gap:10px;justify-content:space-between;align-items:center">
-            <span class="muted">Atención a sector público y privado · Cumplimiento LAASSP y lineamientos de
-                compras</span>
-            <span class="muted">Soporte 24/7 en contratos críticos</span>
+            <span class="muted">Distribuidor de insumos y equipo médico</span>
+            <span class="muted">Atención en todo México</span>
         </div>
     </div>
 
@@ -513,39 +513,162 @@
                     <div class="tag">Ingeniería en Equipos Médicos</div>
                 </div>
             </a>
-            <nav class="menu">
-                <a href="#nosotros">Nosotros</a>
-                <a href="#valores">Valores</a>
-                <a href="#servicios">Servicios</a>
+            <div class="mobile-actions"><a href="#contacto">Contacto</a><button type="button" id="menu-toggle" aria-expanded="false" aria-controls="main-menu">Menú</button></div>
+            <nav class="menu" id="main-menu" aria-label="Navegación principal">
+                <a href="#servicios">Productos y servicios</a>
+                <a href="#casos">Clientes</a>
                 <a href="#cobertura">Cobertura</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto" class="cta nav-contact">Solicitar información</a>
                 <!-- Quitados del menú: Sectores, Casos, Normatividad, Datos fiscales -->
                 <a href="bolsa.html">Bolsa</a>
                 <a href="empleados.html" class="ghost">Empleados</a>
-                <a href="tienda.html" class="cta">Tienda en línea</a>
+                <a href="tienda.html">Tienda en línea</a>
             </nav>
         </div>
     </header>
 
+    <main id="contenido">
     <!-- Hero -->
     <section class="hero" id="top">
         <div class="wrap">
-            <div>
-                <div class="pill">Desde 2018 · Soluciones integrales</div>
-                <h1>Ingeniería clínica y suministro médico con cumplimiento</h1>
-                <p>Diseño, instalación y mantenimiento de tecnología médica. Acompañamiento técnico y administrativo
-                    para compras públicas y privadas.</p>
+            <div class="hero-copy">
+                <h1>Insumos y equipo médico para cuidar la salud</h1>
+                <p>Somos distribuidores de insumos, equipo e instrumental médico para hospitales e instituciones públicas y privadas de todo México.</p>
                 <div class="buttons">
-                    <a href="#nosotros" class="cta">Conócenos</a>
-                    <a href="#servicios" class="ghost">Servicios</a>
+                    <a href="#contacto" class="cta">Solicitar información <span aria-hidden="true">↗</span></a>
+                    <a href="#servicios" class="hero-contact">Ver productos y servicios <span aria-hidden="true">↓</span></a>
                 </div>
             </div>
-            <div class="reveal">
-                <div class="card" style="text-align:center">
-                    <img alt="Proyecto hospitalario"
-                        src="logovalma.jpg"
-                        style="border-radius:16px" />
-                    <p class="muted" style="margin-top:10px">Ingenieria en Equipos Médicos Valma
-                    </p>
+            <div class="hero-visual">
+                <img src="valma-insumos.png" alt="Imagen ilustrativa generada de un espacio de distribución de insumos médicos">
+                <div class="hero-caption"><span>Distribución nacional</span><strong>Atención en<br>todo México</strong><a href="#cobertura" aria-label="Ver cobertura nacional">↗</a></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="service-band" aria-label="Áreas de servicio">
+        <div class="wrap"><span>Lo que ofrecemos</span><a href="#servicios">Insumos médicos</a><a href="#servicios">Equipo e instrumental</a><a href="#sectores">Para quiénes trabajamos</a></div>
+    </div>
+
+    <!-- Clientes -->
+    <section id="casos" style="background:#fff">
+        <div class="wrap">
+            <div class="clients-header">
+                <div>
+                    <h2 class="section-title">Nuestros clientes</h2>
+                    <p class="section-sub">Algunos de nuestros clientes:</p>
+                </div>
+                <div class="clients-controls" aria-label="Controles del carrusel" hidden>
+                    <button type="button" class="clients-arrow" data-direction="prev" aria-label="Ver clientes anteriores" aria-controls="clients-list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+                    <button type="button" class="clients-arrow" data-direction="next" aria-label="Ver más clientes" aria-controls="clients-list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+                </div>
+            </div>
+            <div class="clients-track" id="clients-list" role="region" aria-label="Clientes de VALMA" tabindex="0">
+                <div class="client-tile"><img src="assets/clientes/imss.png" alt="IMSS" loading="lazy" width="556" height="700"><span>IMSS</span></div>
+                <div class="client-tile"><img src="assets/clientes/imss-bienestar.png" alt="IMSS-Bienestar" loading="lazy" width="1200" height="431"><span>IMSS-Bienestar</span></div>
+                <div class="client-tile"><img src="assets/clientes/issste.png" alt="ISSSTE" loading="lazy" width="1200" height="345"><span>ISSSTE</span></div>
+                <div class="client-tile"><img src="assets/clientes/sedena.png" alt="SEDENA" loading="lazy" width="1200" height="328"><span>SEDENA</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <div class="wrap">
+            <h2 class="section-title">Lo que necesitas para cuidar la salud</h2>
+            <p class="section-sub">Insumos y equipo para hospitales, clínicas, laboratorios e instituciones de salud.</p>
+            <div class="grid-3">
+                <div class="card reveal">
+                    <h3>Insumos y consumibles médicos</h3>
+                    <ul class="muted">
+                        <li>Insumos y consumibles para uso médico.</li>
+                        <li>Accesorios y artículos para la atención de pacientes.</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <h3>Equipo e instrumental</h3>
+                    <ul class="muted">
+                        <li>Equipo e instrumental médico y de laboratorio.</li>
+                        <li>Accesorios y refacciones.</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <h3>Servicios complementarios</h3>
+                    <ul class="muted">
+                        <li>Instalación y mantenimiento de equipos.</li>
+                        <li>Acompañamiento técnico y capacitación.</li>
+                        <li>Apoyo con garantías y refacciones.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="card reveal" style="padding:14px 18px">
+                <p class="muted" style="margin:0">¿Buscas algún artículo? Escríbenos y consulta su disponibilidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectores atendidos (sin botón en el menú) -->
+    <section id="sectores">
+        <div class="wrap">
+            <h2 class="section-title">Con quiénes trabajamos</h2>
+            <p class="section-sub">Trabajamos principalmente con instituciones públicas y también con el sector privado.</p>
+            <div class="grid-4">
+                <div class="card reveal">
+                    <h3>Instituciones públicas</h3>
+                    <p class="muted">Instituciones de seguridad social y salud pública.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Hospitales y clínicas</h3>
+                    <p class="muted">Insumos y equipo para la atención médica.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Laboratorios</h3>
+                    <p class="muted">Equipo e instrumental de laboratorio.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Servicios de salud</h3>
+                    <p class="muted">Instituciones y redes de atención médica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cobertura nacional con mapa -->
+    <section id="cobertura" style="background:#fff">
+        <div class="wrap">
+            <h2 class="section-title">Cobertura Nacional</h2>
+            <p class="section-sub">Estamos para ayudarte en todo México.</p>
+            <div class="coverage-layout">
+                <div class="coverage-map" aria-hidden="true">
+                    <svg viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- Mexico geometry: Natural Earth 1:110m, public domain. -->
+                        <path class="coverage-land" fill-rule="evenodd" d="M68.0,39.3 L99.5,37.4 L134.6,34.6 L132.0,39.6 L173.9,51.9 L237.0,69.6 L292.1,69.5 L314.1,69.5 L314.1,59.0 L362.1,59.0 L372.2,68.0 L386.4,76.0 L402.8,87.1 L412.0,100.3 L418.9,114.2 L433.2,121.8 L456.2,129.4 L473.6,109.4 L496.3,108.9 L515.8,119.0 L529.7,136.3 L539.3,151.1 L555.6,165.5 L561.7,183.2 L569.4,195.1 L591.0,202.9 L610.7,208.5 L621.5,207.7 L610.8,229.9 L605.9,248.1 L603.9,281.9 L601.2,294.3 L606.0,308.0 L614.6,320.4 L620.1,339.9 L638.5,358.8 L645.0,373.2 L655.8,385.6 L685.2,392.3 L696.7,402.9 L721.0,395.8 L742.1,393.3 L762.8,388.7 L780.2,384.4 L797.9,374.1 L804.5,359.3 L806.7,338.1 L811.5,330.7 L830.3,324.1 L859.6,318.3 L884.1,319.1 L900.9,317.0 L907.5,322.4 L906.6,334.5 L891.7,349.5 L885.1,364.9 L890.2,369.3 L886.1,380.2 L879.1,400.0 L872.1,393.5 L866.3,393.9 L861.0,394.2 L851.1,409.5 L846.1,406.5 L842.7,407.7 L843.0,411.4 L817.3,411.1 L791.5,411.1 L791.5,425.4 L779.0,425.4 L789.3,433.8 L799.5,439.7 L802.6,445.2 L807.1,446.7 L806.4,455.3 L770.8,455.4 L757.5,476.0 L761.4,480.7 L758.2,486.6 L757.5,494.0 L726.2,466.8 L711.9,458.6 L689.3,452.0 L673.8,453.8 L651.6,463.3 L637.6,465.8 L618.1,459.1 L597.3,454.3 L571.4,442.8 L550.7,439.2 L519.3,427.5 L496.2,415.4 L489.2,408.6 L473.7,407.1 L445.4,399.1 L433.8,387.6 L404.1,373.3 L390.2,357.3 L383.6,345.0 L392.8,342.6 L390.0,335.4 L396.3,328.8 L396.5,320.1 L387.1,308.7 L384.6,298.7 L375.4,285.9 L351.0,260.8 L323.1,241.1 L309.6,225.3 L285.9,215.0 L280.8,208.8 L285.0,193.2 L270.9,187.3 L254.5,175.1 L247.6,157.4 L232.7,155.4 L216.7,142.1 L203.7,129.8 L202.5,121.9 L187.6,102.8 L177.8,83.5 L178.2,73.8 L158.2,63.8 L148.9,64.9 L133.1,57.9 L128.7,68.2 L133.3,80.3 L136.0,99.3 L145.4,109.7 L166.0,127.1 L170.6,133.0 L174.8,134.8 L178.4,143.5 L183.4,143.2 L188.9,159.4 L197.3,165.9 L203.2,174.8 L220.6,187.7 L229.8,211.2 L238.0,222.2 L245.7,234.1 L247.2,247.4 L260.6,248.2 L271.7,259.7 L281.7,271.0 L281.1,275.5 L269.4,284.8 L264.5,284.7 L257.2,269.3 L239.1,254.9 L219.1,242.7 L205.0,236.3 L205.9,217.8 L201.7,204.1 L188.5,196.3 L169.4,185.0 L165.8,188.3 L158.8,181.7 L141.7,175.6 L125.4,160.9 L127.4,159.0 L138.8,160.4 L149.1,151.0 L150.1,139.6 L128.8,121.6 L112.6,114.6 L102.3,98.8 L92.1,82.2 L79.3,62.0 L68.0,39.3 Z"/>
+                        <g class="coverage-marker" data-place="0" transform="translate(533.6 212.3)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="1" transform="translate(448.0 216.0)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="2" transform="translate(503.0 181.5)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="3" transform="translate(471.1 286.0)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="4" transform="translate(478.8 308.4)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="5" transform="translate(531.5 341.1)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="6" transform="translate(439.2 375.1)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="7" transform="translate(830.5 331.6)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="8" transform="translate(906.4 326.6)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="9" transform="translate(649.4 376.9)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="10" transform="translate(413.4 254.2)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="11" transform="translate(515.0 301.5)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g><g class="coverage-marker" data-place="12" transform="translate(495.6 327.7)" aria-hidden="true"><circle class="marker-halo" r="12"/><circle class="marker-core" r="5"/></g>
+                    </svg>
+                    <span class="map-caption">Cobertura nacional</span>
+                </div>
+                <div class="coverage-panel">
+                    <h3>Plazas destacadas</h3>
+                    <p>Selecciona una ubicación para encontrarla en el mapa.</p>
+                    <p class="coverage-selection" aria-live="polite">Selecciona una plaza</p>
+                    <details class="coverage-group"><summary>Norte</summary><ul class="coverage-places" aria-label="Plazas del norte"><li><button type="button" class="coverage-place" data-place="0" aria-pressed="false">Monterrey</button></li>
+<li><button type="button" class="coverage-place" data-place="1" aria-pressed="false">Torreón</button></li>
+<li><button type="button" class="coverage-place" data-place="2" aria-pressed="false">Monclova</button></li>
+<li><button type="button" class="coverage-place" data-place="10" aria-pressed="false">Durango</button></li></ul></details>
+                    <details class="coverage-group"><summary>Centro y occidente</summary><ul class="coverage-places" aria-label="Plazas del centro y occidente">
+<li><button type="button" class="coverage-place" data-place="3" aria-pressed="false">Zacatecas</button></li>
+<li><button type="button" class="coverage-place" data-place="4" aria-pressed="false">Aguascalientes</button></li>
+<li><button type="button" class="coverage-place" data-place="5" aria-pressed="false">Querétaro</button></li>
+<li><button type="button" class="coverage-place" data-place="6" aria-pressed="false">Colima</button></li>
+<li><button type="button" class="coverage-place" data-place="11" aria-pressed="false">San Luis Potosí</button></li>
+<li><button type="button" class="coverage-place" data-place="12" aria-pressed="false">León</button></li></ul></details>
+                    <details class="coverage-group"><summary>Golfo y sureste</summary><ul class="coverage-places" aria-label="Plazas del golfo y sureste">
+<li><button type="button" class="coverage-place" data-place="7" aria-pressed="false">Yucatán</button></li>
+<li><button type="button" class="coverage-place" data-place="8" aria-pressed="false">Cancún</button></li>
+<li><button type="button" class="coverage-place" data-place="9" aria-pressed="false">Veracruz</button></li></ul></details>
+                    <div class="legend"><span>Sector público</span><span>Sector privado</span></div>
                 </div>
             </div>
         </div>
@@ -555,16 +678,13 @@
     <section id="nosotros">
         <div class="wrap">
             <h2 class="section-title">Quiénes somos</h2>
-            <p class="section-sub">Empresa mexicana especializada en <strong>ingeniería de equipos Médicos</strong>,
-                proyectos hospitalarios y comercialización mayorista.</p>
+            <p class="section-sub">Somos una empresa mexicana dedicada a distribuir insumos y equipo médico a instituciones de salud, principalmente del sector público.</p>
             <div class="grid-3">
                 <div class="card reveal"><span class="chip">Misión</span>
-                    <p>Brindar soluciones seguras y eficientes en equipos médicos, elevando los resultados clínicos
-                        mediante ingeniería confiable y servicio humano.</p>
+                    <p>Acercar insumos y equipo médico con atención responsable a cada cliente.</p>
                 </div>
                 <div class="card reveal"><span class="chip">Visión</span>
-                    <p>Ser el aliado técnico preferido de hospitales y clínicas en Latinoamérica por calidad, rapidez y
-                        ética.</p>
+                    <p>Ser una empresa de referencia para las instituciones de salud en México.</p>
                 </div>
                 <div class="card reveal"><span class="chip">Valores</span>
                     <p>Seguridad del paciente, transparencia, cumplimiento, innovación práctica y soporte cercano.</p>
@@ -577,157 +697,20 @@
     <section id="valores" style="background:#fff">
         <div class="wrap">
             <h2 class="section-title">Cómo trabajamos</h2>
-            <p class="section-sub">Metodologías claras, indicadores y mejora continua.</p>
+            <p class="section-sub">Escuchamos lo que necesitas y te ayudamos a encontrarlo.</p>
             <div class="grid-3">
                 <div class="card reveal">
-                    <h3 class="accent" style="margin:0 0 6px">Calidad y cumplimiento</h3>
-                    <p class="muted">Procesos alineados a buenas prácticas y normativas; trazabilidad y checklists
-                        digitales.</p>
+                    <h3 class="accent" style="margin:0 0 6px">Atención cercana</h3>
+                    <p class="muted">Atendemos a instituciones públicas y privadas.</p>
                 </div>
                 <div class="card reveal">
-                    <h3 class="accent" style="margin:0 0 6px">Tiempo de respuesta</h3>
-                    <p class="muted">SLA medibles, comunicación proactiva y refacciones listas para regreso a servicio.
-                    </p>
+                    <h3 class="accent" style="margin:0 0 6px">Inventario</h3>
+                    <p class="muted">Contamos con un amplio inventario de insumos y equipo médico.</p>
                 </div>
                 <div class="card reveal">
-                    <h3 class="accent" style="margin:0 0 6px">Capacitación</h3>
-                    <p class="muted">Onboarding a personal clínico y biomédico para reducir fallas por operación.</p>
+                    <h3 class="accent" style="margin:0 0 6px">Atención nacional</h3>
+                    <p class="muted">Estamos presentes para atenderte en distintas regiones del país.</p>
                 </div>
-            </div>
-            <div class="grid-3" style="margin-top:18px">
-                <div class="card reveal">
-                    <div style="font-size:2rem;font-weight:900;color:var(--teal-700)">97%</div>
-                    <p class="muted">Satisfacción postventa <em></em></p>
-                </div>
-                <div class="card reveal">
-                    <div style="font-size:2rem;font-weight:900;color:var(--teal-700)">200+</div>
-                    <p class="muted">Equipos instalados en toda la republica<em></em></p>
-                </div>
-                <div class="card reveal">
-                    <div style="font-size:2rem;font-weight:900;color:var(--teal-700)">24/7</div>
-                    <p class="muted">Soporte en contratos</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios -->
-    <section id="servicios">
-        <div class="wrap">
-            <h2 class="section-title">Servicios</h2>
-            <p class="section-sub">Servimos a <strong>toda la República Mexicana</strong> con soluciones de ingeniería
-                clínica y suministro mayorista.</p>
-            <div class="grid-3">
-                <div class="card reveal">
-                    <h3>Ingeniería y proyectos</h3>
-                    <ul class="muted">
-                        <li>Instalación, puesta a punto e IQ/OQ/PQ.</li>
-                        <li>Mantenimiento preventivo y correctivo.</li>
-                        <li>Proyectos llave en mano para clínicas y quirófanos.</li>
-                        <li>Capacitación a usuarios y biomédicos.</li>
-                    </ul>
-                </div>
-                <div class="card reveal">
-                    <h3>Comercialización mayorista</h3>
-                    <ul class="muted">
-                        <li>Equipo e instrumental médico y de laboratorio.</li>
-                        <li>Accesorios, consumibles y refacciones.</li>
-                        <li>Asesoría de compra con TCO y ROI.</li>
-                    </ul>
-                </div>
-                <div class="card reveal">
-                    <h3>Soporte y contratos</h3>
-                    <ul class="muted">
-                        <li>SLA definidos y reportes ejecutivos.</li>
-                        <li>Gestión de garantías y refacciones.</li>
-                        <li>Atención a auditorías y visitas regulatorias.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="divider"></div>
-            <div class="card reveal" style="padding:14px 18px">
-                <p class="muted" style="margin:0"><strong>Sector público:</strong> licitaciones, adjudicaciones y
-                    contratos marco; cumplimiento de LAASSP, Ley de Obra Pública y lineamientos vigentes. <strong>Sector
-                        privado:</strong> clínicas, hospitales, laboratorios, aseguradoras y redes médicas. <strong>Entre Otras Más</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cobertura nacional con mapa -->
-    <section id="cobertura" style="background:#fff">
-        <div class="wrap">
-            <h2 class="section-title">Cobertura Nacional</h2>
-            <p class="section-sub">Operamos en todo México con enfoque en estas plazas clave y más.</p>
-            <div class="mapCard">
-                <div class="mapWrap">
-                    <img class="mapImg" alt="Mapa de México"
-                        src="mapa.png">
-                    <!-- Pines (posiciones aproximadas) -->
-                    <div class="pin" style="left:51%; top:43%"><label>Monterrey</label></div>
-                    <div class="pin" style="left:44%; top:42%"><label>Torreón</label></div>
-                    <div class="pin" style="left:48%; top:35%"><label>Monclova</label></div>
-                    <div class="pin" style="left:46%; top:53%"><label>Zacatecas</label></div>
-                    <div class="pin" style="left:46%; top:56%"><label>Aguascalientes</label></div>
-                    <div class="pin" style="left:51%; top:63%"><label>Querétaro</label></div>
-                    <div class="pin" style="left:42%; top:69%"><label>Colima</label></div>
-                    <div class="pin" style="left:76%; top:60%"><label>Yucatán</label></div>
-                    <div class="pin" style="left:82%; top:57%"><label>Cancún</label></div>
-                    <div class="pin" style="left:60%; top:65%"><label>Veracruz</label></div>
-                    <div class="pin" style="left:40%; top:48%"><label>Durango</label></div>
-                    <div class="pin" style="left:49%; top:53%"><label>San Luis Potosí</label></div>
-                    <div class="pin" style="left:48%; top:62%"><label>León</label></div>
-                </div>
-                <div class="legend"><span>Sector Público</span><span>Sector Privado</span><span>24/7 Contratos
-                        Críticos</span><span>Atención Profesional y Personalizada</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sectores atendidos (sin botón en el menú) -->
-    <section id="sectores">
-        <div class="wrap">
-            <h2 class="section-title">Sectores atendidos</h2>
-            <p class="section-sub">Nuestros Clientes más Importantes</p>
-            <div class="grid-4">
-                <div class="card reveal">
-                    <h3>Hospitales Publicos y Privados</h3>
-                    <p class="muted">Infraestructura, quirófanos y áreas críticas.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Clínicas privadas</h3>
-                    <p class="muted">Proyectos llave en mano y soporte.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Laboratorios</h3>
-                    <p class="muted">Instrumental, calibraciones y mantenimiento.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>Aseguradoras / redes</h3>
-                    <p class="muted">Continuidad operativa y SLAs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Casos de éxito (sin botón en el menú) -->
-    <section id="casos" style="background:#fff">
-        <div class="wrap">
-            <h2 class="section-title">Casos de éxito</h2>
-            <p class="section-sub">Algo de Nuestro Universo</p>
-            <div class="grid">
-                <details class="reveal">
-                    <summary>Implantación de Equipo Quirúrgico</summary>
-                    <p class="muted">Puesta a punto, IQ/OQ/PQ y capacitación. Reducción de tiempos muertos 26%.</p>
-                </details>
-                <details class="reveal">
-                    <summary>Renovación de laboratorio · Red privada y Publica</summary>
-                    <p class="muted">Suministro mayorista y validaciones. Disminución de incidencias 32%.</p>
-                </details>
-                <details class="reveal">
-                    <summary>Contrato 24/7 · Instituto Mexicano del Seguro Social (IMSS)</summary>
-                    <p class="muted">Mantenimiento y refacciones críticas. Cumplimiento de SLAs trimestre a trimestre. Surtido de Insumos Medicos
-                    </p>
-                </details>
             </div>
         </div>
     </section>
@@ -737,6 +720,8 @@
         <div class="wrap">
             <h2 class="section-title">Normatividad y certificaciones</h2>
             <p class="section-sub">Marco de referencia para operación, seguridad y calidad.</p>
+            <details class="standards-details">
+                <summary>Consultar información de normatividad y calidad</summary>
             <div class="grid-3">
                 <div class="card reveal">
                     <h3>Reglamento</h3>
@@ -768,8 +753,10 @@
 
             <div class="card reveal">
                 <h3 style="margin-top:0">Matriz de cumplimiento (resumen)</h3>
-                <div style="overflow:auto">
+                <p class="table-hint">Desliza la tabla para ver todas las columnas.</p>
+                <div class="table-scroll" role="region" aria-label="Matriz de cumplimiento" tabindex="0">
                     <table>
+                        <caption class="visually-hidden">Resumen de requisitos, evidencia, periodicidad y estatus</caption>
                         <thead>
                             <tr>
                                 <th>Requisito</th>
@@ -807,6 +794,7 @@
                     </table>
                 </div>
             </div>
+            </details>
         </div>
     </section>
 
@@ -856,13 +844,12 @@
                         técnicas, cartas de cumplimiento y matrices de evaluación.</p>
                 </details>
                 <details class="reveal">
-                    <summary>¿Atienden emergencias 24/7?</summary>
-                    <p class="muted">Sí, según alcance del contrato, con ingenieros on-call y stock de refacciones
-                        críticas.</p>
+                    <summary>¿Cómo puedo consultar insumos y equipo?</summary>
+                    <p class="muted">Cuéntanos qué necesitas y revisamos la disponibilidad.</p>
                 </details>
                 <details class="reveal">
-                    <summary>¿Incluyen capacitación?</summary>
-                    <p class="muted">Sí. Onboarding a usuarios y biomédicos con constancias y materiales digitales.</p>
+                    <summary>¿Atienden instituciones privadas?</summary>
+                    <p class="muted">Sí. También trabajamos con hospitales, clínicas y laboratorios privados.</p>
                 </details>
             </div>
         </div>
@@ -872,27 +859,26 @@
     <section id="contacto" style="background:#fff">
         <div class="wrap">
             <h2 class="section-title">Contacto</h2>
-            <p class="section-sub">¿Proyecto nuevo o soporte a equipo instalado? Estamos listos.</p>
+            <p class="section-sub">¿Necesitas insumos o equipo médico? Cuéntanos cómo podemos ayudarte.</p>
             <div class="grid-2">
                 <div class="card reveal">
                     <h3>Escríbenos</h3>
-                    <form
-                        onsubmit="event.preventDefault(); alert('Gracias, su informacion ha sido enviada :)');"
-                        class="muted">
-                        <label>Nombre<br><input required type="text" placeholder="Tu nombre"
+                    <p class="form-note">Al continuar se abrirá tu aplicación de correo con el mensaje preparado. Revísalo y envíalo desde allí.</p>
+                    <form id="contact-form" class="muted">
+                        <label>Nombre<br><input name="nombre" required type="text" placeholder="Tu nombre"
                                 style="width:100%;padding:12px;border:1px solid #d7e3ea;border-radius:12px"></label><br><br>
-                        <label>Correo<br><input required type="email" placeholder="nombre@dominio.com"
+                        <label>Correo<br><input name="correo" required type="email" placeholder="nombre@dominio.com"
                                 style="width:100%;padding:12px;border:1px solid #d7e3ea;border-radius:12px"></label><br><br>
-                        <label>Mensaje<br><textarea required rows="5" placeholder="Cuéntanos lo que necesitas"
+                        <label>Mensaje<br><textarea name="mensaje" required rows="5" placeholder="Cuéntanos lo que necesitas"
                                 style="width:100%;padding:12px;border:1px solid #d7e3ea;border-radius:12px"></textarea></label><br><br>
-                        <button class="cta" type="submit">Enviar</button>
+                        <button class="cta" type="submit">Preparar correo</button>
                     </form>
                 </div>
                 <div class="card reveal">
                     <h3>Datos de contacto</h3>
                     <p class="muted">Monterrey, Nuevo León · México<br>Horario: Lun a Vie · 9:00 a 17:00</p>
-                    <p class="muted"><strong>Correo:</strong> ingenieriavalma@gmail.com
-                        <em></em><br><strong>Teléfono:</strong> +52 (492) 162 7863 <em></em></p>
+                    <p class="muted"><strong>Correo:</strong> <a href="mailto:direccion@ingenieriavalma.com">direccion@ingenieriavalma.com</a>
+                        <em></em><br><strong>Teléfono:</strong> <a href="tel:+524921627863">+52 (492) 162 7863</a> <em></em></p>
                     <div class="divider"></div>
                     <h3>Aviso de privacidad</h3>
                     <p class="muted">El tratamiento de datos personales se rige por nuestro aviso de privacidad
@@ -902,6 +888,7 @@
         </div>
     </section>
 
+    </main>
     <!-- Footer corporativo -->
     <footer
         style="background:linear-gradient(180deg,#f2fbfb,#e7f6f5);border-top:1px solid rgba(15,107,106,.12);padding:26px 0">
@@ -918,9 +905,9 @@
                     <strong>Mapa del sitio</strong>
                     <ul class="muted">
                         <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#servicios">Productos y servicios</a></li>
                         <li><a href="#cobertura">Cobertura</a></li>
-                        <li><a href="#casos">Casos</a></li>
+                        <li><a href="#casos">Clientes</a></li>
                         <li><a href="bolsa.html">Bolsa de trabajo</a></li>
                     </ul>
                 </div>
@@ -938,34 +925,73 @@
         </div>
     </footer>
 
-    <!-- Bloqueo móvil/tablet -->
-    <div class="blocker" id="mobileBlock" aria-hidden="false">
-        <div class="card" role="dialog" aria-modal="true" aria-labelledby="mbTitle">
-            <h2 id="mbTitle">Vista no disponible en dispositivos móviles</h2>
-            <p>Para una mejor experiencia, accede desde una computadora de escritorio o amplía la ventana de tu
-                navegador.</p>
-            <p style="opacity:0.9;font-size:.95rem">Si ya estás en una computadora, maximiza la ventana para continuar.
-            </p>
-        </div>
-    </div>
-
     <script>
         // Año dinámico
         document.getElementById('y').textContent = new Date().getFullYear();
+
+        const clientsTrack = document.getElementById('clients-list');
+        const clientsControls = document.querySelector('.clients-controls');
+        const clientsPrev = clientsControls.querySelector('[data-direction="prev"]');
+        const clientsNext = clientsControls.querySelector('[data-direction="next"]');
+        const updateClientsControls = () => {
+            const maxScroll = clientsTrack.scrollWidth - clientsTrack.clientWidth;
+            clientsControls.hidden = maxScroll <= 1;
+            clientsPrev.disabled = clientsTrack.scrollLeft <= 1;
+            clientsNext.disabled = clientsTrack.scrollLeft >= maxScroll - 1;
+        };
+        [clientsPrev, clientsNext].forEach(button => button.addEventListener('click', () => {
+            const tile = clientsTrack.querySelector('.client-tile');
+            const gap = parseFloat(getComputedStyle(clientsTrack).columnGap) || 0;
+            const direction = button.dataset.direction === 'next' ? 1 : -1;
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            clientsTrack.scrollBy({ left: direction * (tile.getBoundingClientRect().width + gap), behavior: reduceMotion ? 'auto' : 'smooth' });
+        }));
+        clientsTrack.addEventListener('scroll', updateClientsControls, { passive: true });
+        window.addEventListener('resize', updateClientsControls);
+        updateClientsControls();
+
+        document.getElementById('contact-form').addEventListener('submit', event => {
+            event.preventDefault();
+            const fields = new FormData(event.currentTarget);
+            const body = `Nombre: ${fields.get('nombre')}\nCorreo: ${fields.get('correo')}\n\nMensaje:\n${fields.get('mensaje')}`;
+            window.location.href = `mailto:direccion@ingenieriavalma.com?subject=${encodeURIComponent('Solicitud desde el sitio web de VALMA')}&body=${encodeURIComponent(body)}`;
+        });
+
+        const coverageButtons = [...document.querySelectorAll('.coverage-place')];
+        const coverageMarkers = [...document.querySelectorAll('.coverage-marker')];
+        const coverageSelection = document.querySelector('.coverage-selection');
+        coverageButtons.forEach(button => button.addEventListener('click', () => {
+            const selected = button.dataset.place;
+            coverageButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+            coverageMarkers.forEach(marker => marker.classList.toggle('is-selected', marker.dataset.place === selected));
+            coverageSelection.textContent = button.textContent;
+        }));
+        coverageMarkers.forEach(marker => marker.addEventListener('click', () => {
+            const button = coverageButtons.find(item => item.dataset.place === marker.dataset.place);
+            if (button) {
+                button.closest('details').open = true;
+                button.click();
+            }
+        }));
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainMenu = document.getElementById('main-menu');
+        menuToggle.addEventListener('click', () => {
+            const open = menuToggle.getAttribute('aria-expanded') !== 'true';
+            menuToggle.setAttribute('aria-expanded', String(open));
+            mainMenu.classList.toggle('is-open', open);
+        });
+        mainMenu.addEventListener('click', event => {
+            if (event.target.closest('a')) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mainMenu.classList.remove('is-open');
+            }
+        });
 
         // Reveal on scroll
         const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target) } }), { threshold: .15 });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        // Bloqueo móvil/tablet
-        (function () {
-            const blocker = document.getElementById('mobileBlock');
-            function toggle() {
-                const small = window.matchMedia('(max-width: 1024px)').matches;
-                blocker.style.display = small ? 'flex' : 'none'; document.body.style.overflow = small ? 'hidden' : '';
-            }
-            toggle(); window.addEventListener('resize', toggle);
-        })();
     </script>
 
 

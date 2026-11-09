@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-09T17:25:38.861853+00:00",
+  "title": "Design System: VALMA",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "Azul marino",
+        "canonical": "#0a3747",
+        "tonalRamp": [
+          "oklch(15% 0.072 210)",
+          "oklch(25% 0.12 210)",
+          "oklch(35% 0.12 210)",
+          "oklch(45% 0.12 210)",
+          "oklch(55% 0.12 210)",
+          "oklch(65% 0.12 210)",
+          "oklch(80% 0.096 210)",
+          "oklch(95% 0.024 210)"
+        ]
+      },
+      "teal": {
+        "role": "secondary",
+        "displayName": "Verde azulado",
+        "canonical": "#007f77",
+        "tonalRamp": [
+          "oklch(15% 0.072 180)",
+          "oklch(25% 0.12 180)",
+          "oklch(35% 0.12 180)",
+          "oklch(45% 0.12 180)",
+          "oklch(55% 0.12 180)",
+          "oklch(65% 0.12 180)",
+          "oklch(80% 0.096 180)",
+          "oklch(95% 0.024 180)"
+        ]
+      },
+      "teal-bright": {
+        "role": "secondary",
+        "displayName": "Verde azulado brillante",
+        "canonical": "#00a598",
+        "tonalRamp": [
+          "oklch(15% 0.072 180)",
+          "oklch(25% 0.12 180)",
+          "oklch(35% 0.12 180)",
+          "oklch(45% 0.12 180)",
+          "oklch(55% 0.12 180)",
+          "oklch(65% 0.12 180)",
+          "oklch(80% 0.096 180)",
+          "oklch(95% 0.024 180)"
+        ]
+      },
+      "lime": {
+        "role": "tertiary",
+        "displayName": "Lima claro",
+        "canonical": "#bcef70",
+        "tonalRamp": [
+          "oklch(15% 0.072 125)",
+          "oklch(25% 0.12 125)",
+          "oklch(35% 0.12 125)",
+          "oklch(45% 0.12 125)",
+          "oklch(55% 0.12 125)",
+          "oklch(65% 0.12 125)",
+          "oklch(80% 0.096 125)",
+          "oklch(95% 0.024 125)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel claro",
+        "canonical": "#f5f8f4",
+        "tonalRamp": [
+          "oklch(15% 0.042 150)",
+          "oklch(25% 0.07 150)",
+          "oklch(35% 0.07 150)",
+          "oklch(45% 0.07 150)",
+          "oklch(55% 0.07 150)",
+          "oklch(65% 0.07 150)",
+          "oklch(80% 0.056 150)",
+          "oklch(95% 0.014 150)"
+        ]
+      },
+      "mint": {
+        "role": "neutral",
+        "displayName": "Menta claro",
+        "canonical": "#e3f2eb",
+        "tonalRamp": [
+          "oklch(15% 0.042 160)",
+          "oklch(25% 0.07 160)",
+          "oklch(35% 0.07 160)",
+          "oklch(45% 0.07 160)",
+          "oklch(55% 0.07 160)",
+          "oklch(65% 0.07 160)",
+          "oklch(80% 0.056 160)",
+          "oklch(95% 0.014 160)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Blanco",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.042 150)",
+          "oklch(25% 0.07 150)",
+          "oklch(35% 0.07 150)",
+          "oklch(45% 0.07 150)",
+          "oklch(55% 0.07 150)",
+          "oklch(65% 0.07 150)",
+          "oklch(80% 0.056 150)",
+          "oklch(95% 0.014 150)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Borde tenue",
+        "canonical": "#d6e6e1",
+        "tonalRamp": [
+          "oklch(15% 0.042 160)",
+          "oklch(25% 0.07 160)",
+          "oklch(35% 0.07 160)",
+          "oklch(45% 0.07 160)",
+          "oklch(55% 0.07 160)",
+          "oklch(65% 0.07 160)",
+          "oklch(80% 0.056 160)",
+          "oklch(95% 0.014 160)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titular principal de portada."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de sección."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto de lectura y controles."
+      }
+    },
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1024px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal compartida.",
+      "html": "<button class=\"ds-primary\">Contactar ↗</button>",
+      "css": ".ds-primary{background:#0a3747;color:#fff;border:0;border-radius:5px;min-height:46px;padding:12px 20px;font:700 14px DM Sans,sans-serif;cursor:pointer}.ds-primary:hover{background:#006b66}.ds-primary:focus-visible{outline:3px solid #d18820;outline-offset:3px}"
+    },
+    {
+      "name": "Botón de acento",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "Acción destacada de portada.",
+      "html": "<button class=\"ds-accent\">Conoce nuestros servicios ↗</button>",
+      "css": ".ds-accent{background:#007f77;color:white;border:0;border-radius:5px;min-height:56px;padding:15px 22px;font:700 14px DM Sans,sans-serif;cursor:pointer}.ds-accent:hover{background:#006b66}.ds-accent:focus-visible{outline:3px solid #d18820;outline-offset:3px}"
+    },
+    {
+      "name": "Campo",
+      "kind": "input",
+      "description": "Campo de formulario compartido.",
+      "html": "<label class=\"ds-label\">Nombre<br><input class=\"ds-field\" placeholder=\"Escribe tu nombre\"></label>",
+      "css": ".ds-label{font:600 14px DM Sans,sans-serif;color:#0a3747}.ds-field{margin-top:8px;border:1px solid #a8c7c3;border-radius:8px;padding:12px;font:16px DM Sans,sans-serif;color:#0a3747;background:white}.ds-field:focus-visible{outline:3px solid #d18820;outline-offset:3px}"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "description": "Navegación con acción destacada.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Servicios</a><a href=\"#\">Nosotros</a><a class=\"ds-nav-cta\" href=\"#\">Contactar</a></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;align-items:center;font:700 14px DM Sans,sans-serif}.ds-nav a{color:#0a3747;text-decoration:none}.ds-nav a:hover{color:#007f77}.ds-nav a:focus-visible{outline:3px solid #d18820;outline-offset:3px}.ds-nav .ds-nav-cta{background:#0a3747;color:white;border-radius:5px;padding:12px 15px}"
+    },
+    {
+      "name": "Tarjeta de servicio",
+      "kind": "card",
+      "description": "Servicio en lista editorial.",
+      "html": "<article class=\"ds-service\"><h3>Ingeniería clínica</h3><p>Soluciones para el sector salud.</p></article>",
+      "css": ".ds-service{border-top:2px solid #007f77;padding:25px 0;color:#0a3747;font:16px/1.6 DM Sans,sans-serif}.ds-service h3{font:700 1.4rem Manrope,sans-serif;margin:0 0 12px}.ds-service p{margin:0;color:#466369}"
+    },
+    {
+      "name": "Filtro",
+      "kind": "chip",
+      "description": "Filtro de vacantes.",
+      "html": "<button class=\"ds-chip\">Todas</button>",
+      "css": ".ds-chip{border:1px solid #b8d5d0;background:white;color:#0a3747;border-radius:5px;min-height:44px;padding:8px 18px;font:600 14px DM Sans,sans-serif;cursor:pointer}.ds-chip:hover{background:#e3f2eb}.ds-chip:focus-visible{outline:3px solid #d18820;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Cobertura en movimiento",
+    "overview": "Una identidad editorial para el sector salud que combina claridad institucional con una sensación contemporánea de cercanía y alcance. Los contrastes generosos, la tipografía expresiva y las imágenes de la portada dan protagonismo a la información útil.\n\nLa misma gramática visual acompaña la navegación, los servicios, los formularios y las páginas de soporte. Las interacciones son evidentes y respetan la preferencia de movimiento reducido.",
+    "keyCharacteristics": [
+      "Jerarquía editorial audaz y legible.",
+      "Superficies luminosas y espacios generosos.",
+      "Retícula clara que se adapta a pantallas pequeñas.",
+      "Verde azulado y lima como acentos sobre azul marino."
+    ],
+    "rules": [],
+    "dos": [
+      "Do mantener una jerarquía tipográfica clara y espacio suficiente entre contenidos.",
+      "Do adaptar la retícula a dispositivos pequeños y preservar la legibilidad de los controles.",
+      "Do utilizar el color de acento para señalar acciones y puntos de interés."
+    ],
+    "donts": [
+      "Don't presentar afirmaciones comerciales sin respaldo como hechos verificados.",
+      "Don't permitir que los recursos decorativos compitan con la navegación o el contenido."
+    ]
+  }
+}
